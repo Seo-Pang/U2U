@@ -32,7 +32,7 @@
 
     $data = array(
         // 헤더 데이터
-        array("id" ,"query", "time",),
+        array(id ,"query", "time",),
         // CSV데이터
         array($sess_id, $searchQuery, $searchTime), 
     );

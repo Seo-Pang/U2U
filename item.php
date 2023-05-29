@@ -24,21 +24,16 @@
 <body onLoad="showMessage( '<?php echo $_POST['message'];?>' );" >
 		<!-- 화면구성 -->
 		<BR> 
+		<a href="mainpage.php">
+        <img src="/image/u2u.png" alt="Image" width="250" height="150">
+    	</a>
 		<form name = "formm" method = "post">				
 			&nbsp; &nbsp; &nbsp; 
-			아이템 ID : <INPUT TYPE="int" NAME="message" SIZE="60"> 
+			아이템 명 : <INPUT TYPE="text" NAME="message" SIZE="60"> 
+			<INPUT TYPE = "button" value = "아이템 검색" onClick="javascript:move( './item.php' );">&nbsp; &nbsp;
+			<INPUT TYPE = "button" value = "아이템 추가" onClick="javascript:move( './addItem.php' );">&nbsp; &nbsp; 
 		</form>  
-		 &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-         <INPUT TYPE = "button" value = "아이템 이름 검색" onClick="javascript:move( './item.php' );">
-         <BR>
-         <INPUT TYPE = "button" value = "아이템 추가" onClick="javascript:move( './addItem.php' );">	
-		<INPUT TYPE = "button" value = "아이템 삭제" onClick="javascript:move( './deleteItem.php' );">	 
-         <BR><BR>  
-         
-		<INPUT TYPE = "button" value = "게시글 검색" onClick="javascript:move( './search.php' );">
-
-		<BR> <BR> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		<BR> <BR>  
+		<BR> <BR> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 <?php 
 	// MySQL 드라이버 연결 
 	include("./SQLconstants.php"); 
@@ -49,15 +44,14 @@
 	$message = ( ( ( $message == null ) || ( $message == "" ) ) ? "_%" : $message );
 
 	// MySQL 검색 실행 및 결과 출력
-	$query = "select * from item where name like '%".$message."%';";
+	$query = "select item.*, game.game_name FROM item LEFT OUTER JOIN game ON
+	item.game_id = game.game_id where name like '%".$message."%';";
+
 	$result = mysqli_query( $conn, $query );
 	while( $row = mysqli_fetch_array( $result ) )
 	{
-        
-
-		echo "<BR>아이템 ID : ".$row['item_id'];
-		echo "<BR>아이템 이름 : ".$row['name'];
-		echo "<BR>카테고리 : ".$row['category_id'];
+		echo "<BR>아이템 : ".$row['name'];
+		echo "<BR>게임 : ".$row['game_name'];
 		echo "<BR><img src = '".$row['image']."' height='280' width='180'>";
 		echo "<BR>" ;
 	}

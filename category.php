@@ -42,7 +42,7 @@
     </script>
 </head>
 <body>
-    <a href="category.php">
+    <a href="mainpage.php">
         <img src="/image/u2u.png" alt="Image" width="250" height="150">
     </a>
     <h1>U2U Game Select</h1>

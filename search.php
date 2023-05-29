@@ -27,12 +27,14 @@
 		<form name = "formm" method = "post">				
 			&nbsp; &nbsp; &nbsp; 
 			게시글 제목 : <INPUT TYPE="text" NAME="message" SIZE="60"> 
+			<INPUT TYPE = "button" value = "검색" onClick="javascript:move( './search.php' );">
 		</form>  
-		 &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
-		<INPUT TYPE = "button" value = "게시글 검색" onClick="javascript:move( './search.php' );">
+		 &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
 		<INPUT TYPE = "button" value = "새 게시글 추가" onClick="javascript:move( './add.php' );">	
+		&nbsp; &nbsp; 
 		<INPUT TYPE = "button" value = "게시글 삭제" onClick="javascript:move( './delete.php' );">	
-		<INPUT TYPE = "button" value = "아이템 관리" onClick="javascript:move( './item.php' );">
+		&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; 
+
 		<BR> <BR> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 		<BR> <BR>  
 <?php 
@@ -53,14 +55,10 @@
 		/*SELECT post.*, item.* FROM post LEFT OUTER JOIN item ON
 post.item_id =item.item_id*/
 
-		echo "<BR>ID : ".$row['post_id'];
 		echo "<BR>게시글 제목 : ".$row['title'];
 		echo "<BR>작성 회원 : ".$row['user_id'];
-		echo "<BR>아이템 ID : ".$row['item_id'];
 		echo "<BR>아이템 이름 : ".$row['name'];
 		echo "<BR><img src = '".$row['image']."' height='280' width='180'>";
-		echo "<BR>카테고리 : ".$row['category_id'];
-		
 		echo "<BR>판매금액 : ".$row['sell_cost'];
 		echo "<BR>상세 설명 : ".$row['item_option'];
 		echo "<BR>" ;
