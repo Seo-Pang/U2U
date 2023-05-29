@@ -249,7 +249,7 @@
 		<div class = "nav-first">
 			<div class = "logo"> 
 				<a href = "mainpage.php">
-				<img src = "img/u2u.png" style = "width: 202px; height: 126px;">
+				<img src = "image/u2u.png" style = "width: 202px; height: 126px;">
 				</a>
 			</div>
 			<div class = "find-item"> </div>
