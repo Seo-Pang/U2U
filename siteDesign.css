@@ -1,0 +1,52 @@
+.centered-image {
+    text-align: center;
+    margin-top: 0px;
+}
+.centered-search{
+    text-align: center;
+    margin-top: 60px;
+}
+.search-input {
+    width: 750px; /* 검색창의 너비 조정 */
+    margin-top: 20px;
+    padding: 5px;
+    font-size: 16px;
+    
+}
+.search-button {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.centered-category{
+    text-align: center;
+    margin-top: 70px;
+}
+.dropdown {
+    width: 405px; /* 드롭다운의 너비 조정 */
+    padding: 10px;
+    font-size: 16px;
+}
+.circle-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 400px;
+    text-align: center;
+}
+.circle {
+margin-top: 80px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.circle a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}

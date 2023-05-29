@@ -5,12 +5,12 @@ include("./SQLconstants.php");
 $conn = new mysqli($mySQL_host,$mySQL_id,$mySQL_password,$mySQL_database);
 if ($conn->connect_error) 
 {
-    die("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ½ÇÆĞ: " . $conn->connect_error);
+    die(" " . $conn->connect_error);
 }
 
 $firstValue = $_POST['firstValue'];
-$options = '';
- // Äõ¸® ½ÇÇàÇÏ¿© µ¥ÀÌÅÍ °¡Á®¿À±â
+$options = '<option value="">--ì„œë²„ ì´ë¦„ì„ ì„ íƒí•´ì£¼ì„¸ìš”--</option>';
+
  $sql = "SELECT game_id, server_id, server_name FROM server where game_id = ". $firstValue;
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
@@ -19,8 +19,5 @@ $options = '';
     }
 }
 
-// Ã¹ ¹øÂ° µå·Ó´Ù¿î ¸Ş´ºÀÇ ¼±ÅÃµÈ °ª °¡Á®¿À±â
-// µÎ ¹øÂ° µå·Ó´Ù¿î ¸Ş´ºÀÇ Ç×¸ñÀ» µ¿ÀûÀ¸·Î »ı¼º
-// »ı¼ºµÈ Ç×¸ñµéÀ» Å¬¶óÀÌ¾ğÆ®¿¡°Ô ¹İÈ¯
 echo $options;
 ?>

@@ -1,0 +1,198 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.header{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.header-right-items{
+    display: flex;
+    margin-left: auto;
+}
+
+.header-item{
+    margin-left: 10px;
+}
+
+.nav-background{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    margin: 0px auto;
+}
+
+.nav{
+    width: 800px;
+    margin: 0px auto;
+}
+
+.nav-first{
+    text-align: center;
+    margin-top: 40px;
+    height: 126px;
+}
+
+.nav-second{
+    text-align: center;
+    height: 40px;
+    margin-top: 40px;
+}
+
+.page-info{
+    line-height: 40px;
+    width: 500px;
+    height: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.category-select{
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+}
+
+.reboot-site{
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+}
+
+.write-site{
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+}
+
+.write-background{
+    width: 820px;
+    height: auto;
+    overflow: auto;
+    margin: 0px auto;
+}
+
+.write-category-select{
+    width: 100%;
+    height: 40px;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.write-userid{
+    width: 100%;
+    height: 40px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.write-title{
+    width: 100%;
+    height: 40px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.write-sellcost{
+    width: 100%;
+    height: 40px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.write-itemoption{
+    width: 100%;
+    height: 40px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.write-content{
+    width: 100%;
+    height: 40px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.select-item{
+    width: 100%;
+    height: 40px;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.siteText{
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    margin-right: 20px;
+    line-height: 40px;
+}
+
+.addItem{
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+}
+
+input{
+    height: 40px;
+    width: 660px;
+}
+
+select{
+    height: 40px;
+}
+
+.endWrite{
+    width: 100%;
+    height: 40px;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.header-right-items{
+    display: flex;
+    margin-left: auto;
+}
+
+.sumbit-btn{
+    width: 120px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+}
