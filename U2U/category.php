@@ -41,6 +41,7 @@
         }
     </script>
 </head>
+<<<<<<< Updated upstream:U2U/category.php
 <body>
     <a href="mainpage.php">
         <img src="/image/u2u.png" alt="Image" width="250" height="150">
@@ -50,6 +51,25 @@
     <form method="post" action="posts.php">
         <select id="firstDropdown" onchange="onChangeFirstDropdown()">
         <option value=""><게임선택></option>
+=======
+
+<body>
+
+	<div class="black-bar"> 
+		<a class="login-link" href="https://www.naver.com">로그인</a>
+	</div>
+
+	<div class="centered-image">
+        	<a href="index.php">
+            		<img src="/image/u2u.png" alt="이미지", style="width: 404px;">
+        	</a>
+    	</div>
+
+	<div class="centered-category">
+		<form method="GET" action="posts.php">
+        		<select class="dropdown", id="firstDropdown",name="game", onchange="onChangeFirstDropdown()">
+        			<option value="">--게임 이름을 선택해주세요--</option>
+>>>>>>> Stashed changes:index.php
         <?php
         include("./SQLconstants.php");
         $conn = new mysqli($mySQL_host,$mySQL_id,$mySQL_password,$mySQL_database);
@@ -78,6 +98,7 @@
         <!--<option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>-->
+<<<<<<< Updated upstream:U2U/category.php
         </select>
     
     <select id="secondDropdown">
@@ -89,3 +110,20 @@
 </body>
 </html>
 
+=======
+        		</select>
+    			<select class="dropdown" id="secondDropdown" name="server" >
+    				<option value="">--서버 이름을 선택해주세요--</option>
+			</select>
+		
+	</div>    
+	
+	<div class="centered-search">
+        	<input class="search-input" type="text" name="title" placeholder="게시글 제목을 입력하세요.">
+        	<input class="search-button" type="submit" value="검색">
+	</div>
+</form>
+</body>
+
+</html>
+>>>>>>> Stashed changes:index.php
