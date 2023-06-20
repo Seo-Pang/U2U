@@ -25,17 +25,33 @@
 	}
     </script>
 </head>
-<body>
-<div class="centered-image">
-        <a href="index.php">
-            <img src="/image/u2u.png" alt="이미지", style="width: 404px;">
-        </a>
-    </div>
 
-<div class="centered-category">
-<form method="GET" action="posts.php">
-        <select class="dropdown", id="firstDropdown", onchange="onChangeFirstDropdown()">
-        <option value="">--게임 이름을 선택해주세요--</option>
+<body>
+
+	<div class="black-bar"> 
+		<?php
+            session_start();
+            if(!isset($_SESSION['UserName'])){
+                echo "<a class = ".'login-link'." href = ".'login.php'."> 로그인</a>";
+            }
+            else{
+                $username = $_SESSION['UserName'];
+                echo "<a class = ".'login-link'." href = ".'logout.php'."> ".$username."님</a>";
+            }
+        ?>
+	</div>
+
+	<div class="centered-image">
+        	<a href="index.php">
+            		<img src="/image/u2u.png" alt="이미지", style="width: 404px;">
+        	</a>
+    	</div>
+
+	<div class="centered-category">
+		<form method="GET" action="posts.php">
+        		<select class="dropdown" id="firstDropdown" name ="game" onchange="onChangeFirstDropdown()">
+        			<option value="">--게임 이름을 선택해주세요--</option>
+
         <?php
         include("./SQLconstants.php");
         $conn = new mysqli($mySQL_host,$mySQL_id,$mySQL_password,$mySQL_database);
@@ -60,21 +76,18 @@
             // 데이터베이스 연결 닫기
             $conn->close();
         ?>
-
-        <!--<option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>-->
-        </select>
-    
-    <select class="dropdown" id="secondDropdown" name="server" >
-    <option value="">--서버 이름을 선택해주세요--</option>
-    </br>
-    <div class="centered-search">
-        <input class="search-input" type="text" name="title" placeholder="게시글 제목을 입력하세요.">
-        <input class="search-button" type="submit" value="검색">
-    </div>
+            </select>
+    			<select class="dropdown" id="secondDropdown" name="server" >
+    				<option value="">--서버 이름을 선택해주세요--</option>
+			    </select>
+		
+	</div>    
+	
+	<div class="centered-search">
+        	<input class="search-input" type="text" name="title" placeholder="게시글 제목을 입력하세요.">
+        	<input class="search-button" type="submit" value="검색">
+	</div>
 </form>
-    
- </div>
 </body>
+
 </html>

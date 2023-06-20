@@ -1,5 +1,10 @@
+<?php
+include("./write_log.php");
+?>
+
 <!DOCTYPE html>
 <html>
+<head>
 	<title>U2U - 게시글 작성</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
@@ -35,14 +40,32 @@
 			}
 
 	</script>
+	<style>
+
+		.nameText{
+		    float: left;
+		    width: 660px;
+		    height: 40px;
+		    text-align: left;
+		    line-height: 40px;
+		    margin-left: 20px;
+		}
+	</style>
 </head>
 <link href="sitestyle.css" rel="stylesheet">
+<link href="siteDesign.css" rel="stylesheet">
 <body>
-	<div class = "header">
-		<div class = "header-right-items">
-			<div class = "header-item">사용자님, 반갑습니다.</div>
-			<div class = "header-item"><a href = # style = "color: black">로그아웃</a></div>
-		</div>
+	<div class="black-bar">
+	    <?php
+	        session_start();
+	        if(!isset($_SESSION['UserName'])){
+	            echo "<a class = ".'login-link'." href = ".'login.php'."> 로그인</a>";
+	        }
+	        else{
+	            $username = $_SESSION['UserName'];
+	            echo "<a class = ".'login-link'." href = ".'logout.php'."> ".$username."님</a>";
+	        }
+	    ?>
 	</div>
 	<div class = "nav">
 		<div class = "nav-first">
@@ -54,10 +77,7 @@
 			<div class = "find-item"> </div>
 		</div>
 		<div class = "nav-second">
-			<div class = "page-info" style = "float: left;">게시글 작성</div>
-			<a href = "index.php"><button class = "category-select" style = "float: left;">카테고리</button></a>
-			<a href = "add.php"><button class = "reboot-site" style = "float: left;">새로고침</button></a>
-			<button class = "write-site" style = "float: left;">글쓰기</button>
+			<div class = "page-info" style = "float: left; width: 800px;">게시글 작성</div>
 		</div>
 	</div>
 	<div class = "write-background">
@@ -97,9 +117,11 @@
 	    	</div>
 	    </div>
 	    <form name = "formm" method = "post" action = "./addSQL.php">
-		    <div class = "write-userid">
+		    <div class = "write-userid" style = "height: 40px;">
 		    	<div class = "siteText">작성자 ID</div>
-		    	<input class = "post-id" type = "text" name = "user_id" placeholder = "작성자 아이디를 입력하세요...">
+		    	<?php
+		    		echo "<div class = ".'nameText'." name = ".'user_id'.">".$username."</div>";
+		    	?>
 		    </div>
 		    <div class = "write-title">
 		    	<div class = "siteText">제 목</div>

@@ -97,12 +97,10 @@ a:visited{
 }
 
 .write-userid{
-    width: 100%;
+    width: 820px;
     height: 40px;
-    height: auto;
     margin: 0px auto;
     margin-top: 40px;
-    text-align: center;
 }
 
 .write-title{
@@ -133,6 +131,24 @@ a:visited{
 }
 
 .write-content{
+    width: 100%;
+    height: 40px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.write-item{
+    width: 100%;
+    height: 40px;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.write-image{
     width: 100%;
     height: 40px;
     height: auto;

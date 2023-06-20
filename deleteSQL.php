@@ -1,6 +1,6 @@
 <?php 
 	header('Content-Type: text/html; charset=UTF-8');
-	$id = $_POST['id'];
+	$id = $_GET['id'];
 
 	// MySQL 드라이버 연결 
 	include("./SQLconstants.php"); 
@@ -23,7 +23,7 @@
 	mysqli_close( $conn );
 ?>
 
-<form name = "frm" method = "post" action = "./search.php" >
+<form name = "frm" method = "post" action = "./index.php" >
 	<input type = 'hidden' name = 'message' value = ' * <?php echo str_replace("'", "", $message);?>' >
 </form>
 <script language="javascript">

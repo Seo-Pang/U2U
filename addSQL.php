@@ -8,6 +8,7 @@
 	$sell_cost = $_POST['sell_cost'];
 	$item_option = $_POST['item_option'];
 	$content = $_POST['content'];
+	$server_id =$_POST['server_id'];
 	$message = "";
 
 	// MySQL 드라이버 연결 
@@ -18,7 +19,8 @@
 	$post_id = mysqli_num_rows($data)+1;
 
 	// MySQL 책 추가 실행 	
-	$query = "INSERT INTO post( post_id, user_id, item_id, title, sell_cost, item_option,content ) VALUES ( '".$post_id."', '".$user_id."', '".$item_id."', '".$title."', '".$sell_cost."', '".$item_option."','".$content."');"; 
+	$query = "INSERT INTO post( post_id, user_id, item_id, title, sell_cost, item_option,content, server_id ) VALUES 
+	( '".$post_id."', '".$user_id."', '".$item_id."', '".$title."', '".$sell_cost."', '".$item_option."','".$content."','".$server_id."');"; 
 	$result = mysqli_query( $conn, $query );
 	if( $result ) 
 	{	

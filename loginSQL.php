@@ -20,7 +20,11 @@
         {
             $_SESSION['UserID'] = $row['id'];
             $_SESSION['UserName'] = $row['name'];
-            echo("<script>location.replace('next.php');</script>"); 
+            $userName = $_SESSION['UserName'];
+            //echo("<script>location.replace('next.php');</script>"); 
+            echo "<script>alert('{$userName}'+'님, 환영합니다.');</script>";
+            echo "<script>localStorage.setItem('UserName', '$userName');</script>";
+            echo("<script>location.replace('index.php');</script>"); 
             
         }
         else
